@@ -3,4 +3,4 @@
 ```
 git clone https://github.com/astralevolution/Now.gg.git
 python -m http.server
-``
+```
