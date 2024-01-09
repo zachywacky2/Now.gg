@@ -1,0 +1,48 @@
+<!--Now.gg @ School-->
+<!--Trying to skid, sad.-->
+<!--Astral Evolution-->
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+  <link href='https://ae.astralevolution.pro/nggstyle.css' rel='stylesheet'>
+</head>
+<body>
+  <header>Now.gg @ School</header>
+  <form onsubmit="goNowgg()">
+    <input class="input" placeholder="Enter a valid now.gg URL here." id="url">
+  </form>
+  <div>
+    <h2>Alternatively, choose a game below:</h2>
+    <button onclick="proxy('https://now.gg/play/roblox-corporation/5349/roblox');">Roblox</button>
+    <button onclick="proxy('https://now.gg/play/mojang/2534/minecraft-trial');">Minecraft</button>
+    <button onclick="proxy('https://now.gg/play/epic-games/7308/fortnite');">Fortnite (Finally)</button>
+</body>
+</html>
+
+<!--Scripts-->
+<script>
+async function registerSW() {    
+  const workerURL = "./sw.js";
+  const worker = await navigator.serviceWorker.getRegistration(workerURL, {
+    scope: __uv$config.prefix,
+  });
+  return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
+}
+function proxy(url) {
+  registerSW().then(worker => {   
+    window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+  });
+}
+function goNowgg() {
+  var url = document.getElementById("url").value;  
+  var regex = /^https:\/\/now\.gg\/play\/([^/]+)\/(\d+)\/([^/]+)$/;
+  if (regex.test(url)) {
+    proxy(url);
+  } else {
+    alert("Please enter a valid Now.gg URL and try again (Use https:// at the start of your URL)!");
+  }
+}
+</script>
+<!--Ultraviolet Scripts-->
+<script src="https://ae.astralevolution.pro/uv/uv.bundle.js"></script>
+<script src="https://ae.astralevolution.pro/uv/uv.config.js"></script>
