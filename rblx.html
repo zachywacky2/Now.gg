@@ -1,197 +1,95 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@800&display=swap');
-  font-family: 'Lexend', sans-serif;
-</style>
+    /* Existing styles */
+    /* Font Face */
+    @font-face {
+        font-family: "Lexend", sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+    }
+
+    /* Message Box */
+    .message-box {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 20px;
+        background: #252525;
+        border: 0px solid #ccc;
+        border-left: 5px solid red;
+        border-radius: 5px;
+        z-index: 999; /* Lower z-index */
+        display: none;
+        font-size: 20px;
+        font-family: "Lexend", sans-serif;
+        color: #ffffff; 
+    }
+
+    /* Additional Styles */
+    p, h2, h5, h4 {
+        color: white;
+    }
+
+    body {
+        text-align: center;
+        padding-top: 60px; /* Adjust for the fixed navbar */
+        background-color: black;
+    }
+
+    a {
+        text-align: left;
+    }
+
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Higher z-index */
+    }
+
+    #box {
+        margin-top: calc(100px - 3%); /* Adjust according to your navbar height */
+        z-index: 998; /* Lower z-index than navbar */
+    }
+    /* Slimmer scrollbar */
+    ::-webkit-scrollbar {
+        width: 5px; /* width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #222; /* color of the track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #555; /* color of the thumb */
+        border-radius: 10px; /* roundness of the thumb */
+    }
+
+    /* Glow effect */
+    button {
+        font-family: 'Lexend', sans-serif;
+        background-color: transparent;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
+    }
+  </style>
 
 <html>
 <head>
   <link href='nggstyle.css' rel='stylesheet'>
 </head>
-                      <script>
-                        particlesJS('particles-js', {
-                            particles: {
-                                number: {
-                                    value: 80,
-                                    density: {
-                                        enable: true,
-                                        value_area: 1000
-                                    }
-                                },
-                                color: {
-                                    value: '#ffffff'
-                                },
-                                shape: {
-                                    type: 'circle',
-                                    stroke: {
-                                        width: 0,
-                                        color: '#000000'
-                                    },
-                                    polygon: {
-                                        nb_sides: 5
-                                    }
-                                },
-                                opacity: {
-                                    value: 0.5,
-                                    random: false,
-                                    anim: {
-                                        enable: false,
-                                        speed: 1,
-                                        opacity_min: 0.1,
-                                        sync: false
-                                    }
-                                },
-                                size: {
-                                    value: 3,
-                                    random: true,
-                                    anim: {
-                                        enable: false,
-                                        speed: 40,
-                                        size_min: 0.1,
-                                        sync: false
-                                    }
-                                },
-                                line_linked: {
-                                    enable: true,
-                                    distance: 150,
-                                    color: '#ffffff',
-                                    opacity: 0.4,
-                                    width: 1
-                                },
-                                move: {
-                                    enable: true,
-                                    speed: 6,
-                                    direction: 'none',
-                                    random: false,
-                                    straight: false,
-                                    out_mode: 'out',
-                                    bounce: false,
-                                    attract: {
-                                        enable: false,
-                                        rotateX: 600,
-                                        rotateY: 1200
-                                    }
-                                }
-                            },
-                            interactivity: {
-                                detect_on: 'canvas',
-                                events: {
-                                    onhover: {
-                                        enable: true,
-                                        mode: 'repulse'
-                                    },
-                                    onclick: {
-                                        enable: true,
-                                        mode: 'push'
-                                    },
-                                    resize: true
-                                },
-                                modes: {
-                                    grab: {
-                                        distance: 400,
-                                        line_linked: {
-                                            opacity: 1
-                                        }
-                                    },
-                                    bubble: {
-                                        distance: 400,
-                                        size: 40,
-                                        duration: 2,
-                                        opacity: 8,
-                                        speed: 3
-                                    },
-                                    repulse: {
-                                        distance: 200
-                                    },
-                                    push: {
-                                        particles_nb: 4
-                                    }
-                                }
-                            }
-                        });
-                    </script>
+                    
    <!-- Styles -->
-                    <style>
-                        /* For screens under 600px */
-                        @media screen and (max-width: 1600px) {
-                            body {
-                                overflow-y: scroll; /* Always show vertical scrollbar */
-                            }
-                        }
-
-                        /* For screens above 600px */
-                        @media screen and (min-width: 1601px) {
-                            body {
-                                overflow-y: hidden; /* Hide vertical scrollbar */
-                            }
-                        }
-                        /* Rest of your existing styles */
-                        /* Font Face */
-                        @font-face {
-                            font-family: "Lexend", sans-serif;
-                            src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-                        }
-
-                        /* Message Box */
-                        .message-box {
-                            position: fixed;
-                            top: 20px;
-                            right: 20px;
-                            padding: 20px;
-                            background: #252525;
-                            border: 0px solid #ccc;
-                            border-left: 5px solid red;
-                            border-radius: 5px;
-                            z-index: 999; /* Lower z-index */
-                            display: none;
-                            font-size: 20px;
-                            font-family: "Lexend", sans-serif;
-                            color: #ffffff; 
-                        }
-
-                        /* Additional Styles */
-                        p, h2, h5, h4 {
-                            color: white;
-                        }
-
-                        body {
-                            text-align: center;
-                            padding-top: 60px; /* Adjust for the fixed navbar */
-                        }
-
-                        a {
-                            text-align: left;
-                        }
-
-                        /* Navbar */
-                        .navbar {
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            z-index: 1000; /* Higher z-index */
-                        }
-
-                        #box {
-                            margin-top: calc(100px - 3%); /* Adjust according to your navbar height */
-                            z-index: 998; /* Lower z-index than navbar */
-                        }
-                        /* Slimmer scrollbar */
-                        ::-webkit-scrollbar {
-                          width: 5px; /* width of the scrollbar */
-                        }
-
-                        ::-webkit-scrollbar-track {
-                          background: #222; /* color of the track */
-                        }
-
-                        ::-webkit-scrollbar-thumb {
-                          background: #555; /* color of the thumb */
-                          border-radius: 10px; /* roundness of the thumb */
-                        }
-                        .ad {
-                            margin-bottom: 20px; /* Add margin to create space below the ad */
-                        }
-                    </style>
+                   
 <body>
   <body style="background-color:black;">
   <header>Now.gg Game Player</header>
