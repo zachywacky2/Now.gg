@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/astralevolution/',
-    bare: 'https://tomp.http.astralevolution.pro', 
+    bare: 'https://juniorhighmaths.tafca.co.uk/bare/', 
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv/uv.handler.js',
